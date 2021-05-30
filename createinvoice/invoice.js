@@ -451,9 +451,9 @@ function generatePdf(){
 		const main = document.getElementById('main'); // Invoice
 
 		var opt = {
-			margin:       [-1, -2],
+			margin:       [-0.5, -2],
 			filename:     fName,
-			image:        { type: 'jpeg', quality: 2 },
+			image:        { type: 'jpeg', quality: 0.98 },
 			html2canvas:  { scale: 2 },
 			jsPDF:        { unit: 'cm', format: 'A4', orientation: 'portrait' }
 		};

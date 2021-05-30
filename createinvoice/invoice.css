@@ -7,7 +7,7 @@
 	cursor: default;
 }	
 
-body{ height: auto; background-color: rgb(19, 18, 18);}
+body{ background-color: rgb(19, 18, 18);}
 
 /*---------------------------------Modal Start-----------------------------------*/
 
@@ -196,22 +196,23 @@ input[type=reset]:hover {
 
 .sidenav a img{margin-right: 7px; cursor: pointer; }
 
-#main{
-	box-sizing: border-box; float: left; 
-	height: 29.7cm; width: 21cm;
-	margin: 2em 0 2em 5em; overflow: hidden; 
-	padding: 1cm; 
-}
-#main {
-	background: #FFF; border-radius: 1px; 
-	box-shadow: 0 0 1in -0.25in rgba(206, 203, 203, 0.5); 
-}
-
 /*---------------------------Invoice Temp. Start----------------*/
 
-/*     header       */
-header {display: flex;}
-header span{flex: 1;}
+/*------ A4 Size Page -------*/
+
+#main{
+	box-sizing: border-box; 
+	float: left; 
+	height: 29.7cm; 
+	width: 21cm;
+	margin: 1em 0 1em 5em; 
+	padding: 1cm; 
+	overflow: hidden; 
+}
+#main {
+	background: white; 
+	box-shadow: 0 0 1in -0.25in rgba(206, 203, 203, 0.5); 
+}
 
 /* content editable */
 
@@ -220,18 +221,30 @@ header span{flex: 1;}
 *[contenteditable] { cursor: text; }
 
 *[contenteditable]:hover, *[contenteditable]:focus, td:hover *[contenteditable], td:focus *[contenteditable], 
+
 img.hover { background: #DEF; box-shadow: 0 0 1em 0.5em #DEF; }
 
+/*     header       */
+header {display: flex;}
 
 /*  Tax Invoice Heading   */
-header span h1{
-	font:bold 100% serif ; letter-spacing: 1px;  
-	font-size: 2.3em; text-align:center; text-transform: uppercase; 
-	padding: .6em 0em .8em 0em; float:left; margin-top: 0px; 
+header h1{
+	flex: 1;
+	font:bold 100% serif ; 
+	font-size: 2em; 
+	text-transform: uppercase; 
+	padding: .4em 0em 0 .4em; 
 } 
 
 /*  LOGO   */
-header img { max-height: 12em; max-width: 17em; float:right; margin: 0 .8em 0 0;}
+header img { 
+	flex: 1;
+	max-height: 12em; 
+	max-width: 17em; 
+	float:right; 
+	margin: 0 .8em 0 4em;
+	overflow: hidden;
+}
 
 /*--------------Invoice no, date, Transp., No.Pak.-----------*/
 
@@ -363,10 +376,25 @@ table.inventory td:nth-child(7) { text-align: center; width: 15.3%; }
 	font-size: 1em; font-weight: 600; padding: 0px 0px 3px 0; 
 	border-bottom: .1px solid rgb(143, 140, 140);
 }
-.inword3{margin-top: 8px; color: rgb(143, 140, 140);}
+/*---------- Website ------------*/
+
+#stamp{
+	padding-left: 1em;
+	color: rgba(175, 173, 173, 0.438);
+
+}
+
+#website{ 
+	font-size: 16px;
+	margin-top: 3em;
+	text-align: center;
+	color: rgb(143, 140, 140);
+}
 
 
 /*----------------- Print Section --------------*/
+
+@page { margin: 0; }
 
 @media print {
 	* { -webkit-print-color-adjust: exact; }
@@ -382,7 +410,6 @@ table.inventory td:nth-child(7) { text-align: center; width: 15.3%; }
 
 	
 }
-@page { margin: 0; }
 
 
 
