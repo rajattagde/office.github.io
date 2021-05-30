@@ -1,0 +1,388 @@
+
+*{
+    margin: 0;padding: 0;
+	box-sizing: border-box; 
+	font: 'Open Sans', sans-serif;
+	overflow: auto; padding: 0;
+	cursor: default;
+}	
+
+body{ height: auto; background-color: rgb(19, 18, 18);}
+
+/*---------------------------------Modal Start-----------------------------------*/
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 30px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	/* border: 1px solid #888; */
+	width: 65%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+	from {top:-300px; opacity:0} 
+	to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+	from {top:-300px; opacity:0}
+	to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+	color: white;
+	float: right; margin: 6px 8px 0 0;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  .modal-header {
+	padding: 3px 16px;
+	background-color: rgb(87, 85, 85);
+	color: white;
+  }
+  
+  .modal-body {padding: 2px 14px;}
+
+/*---------------------Modal Form Start------------------*/
+
+form #one div{margin: 5px 0;}
+
+label{
+  font-family: Times, serif; 
+  color: rgba(42, 42, 42, 0.932);
+  font-size: 14px; 
+  margin-right: 8px;}
+
+input[type=text]{
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: solid;
+  border-width: thin;
+  border-color: rgba(172, 172, 172, 0.411);
+  background-color: none;
+  font-family: Times, serif; 
+  font-size: 16px;
+  margin-right: 5px; padding-left: 5px;
+}
+input[type=date]{
+  font-family: Times, serif; border-style: hidden;
+  background-color: none; font-size: 16px;
+  margin-right: 5px; padding-left: 5px; cursor: pointer;
+}
+input[type=number]{
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: solid;
+  border-width: thin;
+  border-color: rgba(172, 172, 172, 0.411);
+  background-color: none;
+  font-family: Times, serif; 
+  font-size: 16px;
+  margin-right: 5px; padding-left: 5px;
+}
+
+select{
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: solid;
+  border-width: thin;
+  border-color: rgba(172, 172, 172, 0.411);
+  background-color: none; 
+  font-family: Times, serif; 
+  font-size: 16px;
+  margin-right: 5px; padding-left: 5px; cursor: pointer;
+}
+
+/*   divc  Item description HSN QTY Amount    */
+.divc{ display: flex;  width: 100%; margin-top: 10px; text-align: center;}
+
+.divc1 select{width: 18em; height: 22px; margin-top: 6px;}
+
+.divc2 input{width: 4em; margin-top: 7px; text-align: center;}
+
+.divc3 input{width: 4em; margin-top: 7px; text-align: center;}
+
+.divc4 input{width: 12em; margin-top: 7px; text-align: center;} 
+
+.divc5 select{width: 4em; height: 22px; margin-top: 6px;}
+
+/*   divd Qty Tax Amount GST Amount Grand Total   */
+.divd { display: flex; width: 100%;  margin-bottom: 10px; justify-content: center;}
+.divd input {text-align: center; color: rgb(3, 51, 46); cursor: not-allowed; flex: 1;}
+
+.divd1 input{width: 6em; }
+.divd2 input{width: 12em; }
+.divd3 input{width: 12em; }
+.divd4 input{width: 12em; }
+.divd5 input{width: 6em; }
+
+
+/*   dive  button   */
+.dive1 {text-align: center;}
+.dive1 input{width: 7em; margin: 15px 1em 7px 1em;}
+
+.dive2 {text-align: center;}
+.dive2 input{width: 7em; margin: 7px 1em 15px 1em;}
+
+input[type=button]{ 
+  padding: 5px 10px; display: inline-block; border-radius: 4px; cursor: pointer;
+  box-sizing: border-box; border: 1px solid rgb(170, 169, 169);
+  background-color: white; color: black;
+}
+input[type=button]:hover {
+	background-color: black;
+  	color: white;
+}
+input[type=reset]{ 
+  padding: 5px 10px; display: inline-block; border-radius: 4px; cursor: pointer;
+  box-sizing:content-box; border: 1px solid rgb(170, 169, 169);
+  background-color: white; color: black;
+
+}
+input[type=reset]:hover {
+	background-color: black;
+  	color: white;
+}
+
+/*-----------------------------------Modal END-------------------------------------------------*/
+
+/*----------------sidenav------------*/
+
+.sidenav {
+	height: 100%; width: 180px; position:fixed;
+	z-index: 1; top: 0; left: 85%; 
+	background-color: rgba(175, 170, 170, 0.712);overflow-x: hidden; 
+	padding: 30px 0; text-align:center;
+}
+.sidenav a {
+	text-decoration: none; padding-top: 1.5em; cursor: pointer;
+	font-size: 25px; color:  #f1f1f1c5; display: block;
+}
+.sidenav a:hover { color: #1b1515;}
+
+.sidenav a img{margin-right: 7px; cursor: pointer; }
+
+#main{
+	box-sizing: border-box; float: left; 
+	height: 29.7cm; width: 21cm;
+	margin: 2em 0 2em 5em; overflow: hidden; 
+	padding: 1cm; 
+}
+#main {
+	background: #FFF; border-radius: 1px; 
+	box-shadow: 0 0 1in -0.25in rgba(206, 203, 203, 0.5); 
+}
+
+/*---------------------------Invoice Temp. Start----------------*/
+
+/*     header       */
+header {display: flex;}
+header span{flex: 1;}
+
+/* content editable */
+
+*[contenteditable] { border-radius: 0.25em; min-width: 1em; outline: 0; }
+
+*[contenteditable] { cursor: text; }
+
+*[contenteditable]:hover, *[contenteditable]:focus, td:hover *[contenteditable], td:focus *[contenteditable], 
+img.hover { background: #DEF; box-shadow: 0 0 1em 0.5em #DEF; }
+
+
+/*  Tax Invoice Heading   */
+header span h1{
+	font:bold 100% serif ; letter-spacing: 1px;  
+	font-size: 2.3em; text-align:center; text-transform: uppercase; 
+	padding: .6em 0em .8em 0em; float:left; margin-top: 0px; 
+} 
+
+/*  LOGO   */
+header img { max-height: 12em; max-width: 17em; float:right; margin: 0 .8em 0 0;}
+
+/*--------------Invoice no, date, Transp., No.Pak.-----------*/
+
+#div0{ width: 100%;}
+#table1 {font-size: 1em; float: left; margin: 0 0 0.8em 1em;}
+
+#table1 th {width: 10%em; text-align:left; padding: 0.3em;}
+#table1 td {width: 70%; text-align:left; padding-left: 10px;}
+
+#intrans select { border: none;}
+
+/*-----------------company-details---------------*/
+
+/*  Div  */
+.div{display: flex; flex-direction: row; background-color:rgba(212, 212, 209, 0.74);
+	border-radius: 0 25px 0 25px;}
+.div .D1{flex: 1;}
+.div .D2{flex: 1;}
+/*  Div 1   */
+.D1{ font-size: 1.1em;padding: .8em 0em .8em 2em;}
+
+.subdiv{ display: flex;}
+.subdiv div{ margin-top: 8px;}
+.subdiv1{ flex: .23; padding-left: 2px;}
+.subdiv2{ flex: 1; padding-left: 16px;}
+
+/*-----------------customer-details---------------*/
+
+/*  Div 2 	*/
+.D2{ font-size: 1.1em;padding: .8em 0em .8em 1em;} 
+
+.cusname {display: flex;}
+.cusname span{flex: .3; font-size: 13px;}
+.cusname h3{ flex: 1.8; text-transform: uppercase ;} 
+
+.add{ display: flex;}
+.add div{ margin-top: 8px;}
+.add1{ flex: .23; padding-left: 2px;}
+.add2{ flex: 1; padding-left: 14px;}
+.add2 address{font: initial; text-transform: capitalize;}
+
+.ph{display: flex;}
+.ph div{ margin-top: 8px;}
+.ph1{ flex: .2; padding-left: 2px;}
+.ph2{ flex: 1; padding-left: 16px;}
+
+.gstno{display: flex;}
+.gstno div{ margin-top: 8px;}
+.gstno1{ flex: .4; padding-left: 2px;}
+.gstno2{ flex: 1; padding-left: 0px; text-transform: uppercase ;}
+
+.statena{display: flex;}
+.statena div{ margin-top: 8px;}
+.statena1{ flex: .4; padding-left: 2px;}
+.statena2{ flex: 1; padding-left: 0px;}
+.statena2 select{ border: none; background-color: rgb(224, 220, 220);}
+
+/*-------------------Item details---------------*/
+
+/* table items */
+#tablediv{width: 100%; height: 35%;margin: 0; padding: 0; overflow: hidden;}
+table.inventory {clear: both; width: 100%; margin-top: .7em;}
+
+table.inventory th { 
+	font-size: 1.03em;  text-align: center;  color: rgb(226, 227, 228); 
+	background-color: rgb(87, 85, 85); padding: 8px 2px 8px 2px;
+}
+
+table.inventory td{font-weight: 600; padding-top: .5em;}
+ 
+table.inventory td:nth-child(1) { text-align: center;width: 30%; }
+table.inventory td:nth-child(2) { text-align: center;width: 8%; }
+table.inventory td:nth-child(3) { text-align: center; width: 8%; }
+table.inventory td:nth-child(4) { text-align: center; width: 9%; }
+table.inventory td:nth-child(5) { text-align: center; width: 15.3%; }
+table.inventory td:nth-child(6) { text-align: center; width: 13%; }
+table.inventory td:nth-child(7) { text-align: center; width: 15.3%; }
+
+/*-------------------Modal open Button---------------*/
+
+#myBtn
+{
+	float: right;
+	margin: 2px 5px 0 0;
+	padding: 1px 5px;
+	font-size: 15px;
+	cursor: pointer;
+	text-align: center;
+	outline: none;
+	color: #f1f1f1;
+	background-color: black;
+	border: none;
+	border-radius: 3px;
+}
+#myBtn:hover 
+{
+	background-color: white;
+  	color: black;
+}
+
+
+/*---------- Terms & Conditions & Tax balance------------*/
+
+.termtax{display: flex; flex-direction: row-reverse;}
+.taxdiv{flex: 1; }
+.termdiv{flex: 1;}
+
+/* Terms & Conditions   */
+.termdiv span{ font-size: 17px; font-weight: 600;}
+.termdiv div{color: rgb(143, 140, 140); padding: 2px 0 0 4px;}
+
+/* 	 Tax balance  	*/
+.taxbl{display: flex; margin-right: 1em;}
+.taxbl div{ font-size: 1em; font-weight: 600; padding: 2px 0px 0px 0;}
+.taxbl1{ flex: 1; text-align: right;}
+.taxbl2{ width: 35%; text-align: center;}
+
+.total{display: flex; margin-right: 1em;}
+.total div{ font-size: 1.2em; font-weight: 600; padding: 2px 0px 2px 0;}
+.total1{ flex: 1; text-align: right; }
+.total2{ width: 35%; text-align: center;}
+
+.inword{ text-align: right; margin-right: 1em;}
+.inword1{ 
+	font-size: 12px; font-weight: 300; padding-top: 2px;
+	color: rgb(143, 140, 140); border-top: .1px solid rgb(143, 140, 140);
+}
+.inword2{
+	font-size: 1em; font-weight: 600; padding: 0px 0px 3px 0; 
+	border-bottom: .1px solid rgb(143, 140, 140);
+}
+.inword3{margin-top: 8px; color: rgb(143, 140, 140);}
+
+
+/*----------------- Print Section --------------*/
+
+@media print {
+	* { -webkit-print-color-adjust: exact; }
+	html { background: none; padding: 0; }
+	
+
+	#main { box-shadow: none; margin: 0; }
+	span:empty { display: none; }
+	.sidenav{display: none;}
+	input[type="date"]::-webkit-calendar-picker-indicator{display: none;} 
+	select{ -webkit-appearance: none;}
+	button{ display: none ;}
+
+	
+}
+@page { margin: 0; }
+
+
+

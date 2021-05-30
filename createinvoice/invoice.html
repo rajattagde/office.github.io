@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link rel="stylesheet" href="modal.css"> -->
+	<link rel="stylesheet" href="invoice.css">
+
+	<title>Invoice</title>
+</head>
+
+<body>
+	<!-----------------------------SIDE NAV------------------------------->
+	<div class="sidenav">
+		<a href="/index.html">Dashbord</a>
+		<a onclick="printInvoice();"><img src="/png/printer.png">Print Invoice</a>
+		<a onclick="generatePdf();"><img src="/png/pdf-file.png">Save PDF</a>
+		<a href="/Inventory/Inventory.html"><img src="/png/inventory.png">Inventory</a>
+		<a href="/index.html">Dashbord</a>
+		<a href="/index.html">Dashbord</a>
+		<a href="/index.html">Dashbord</a>
+	</div>
+
+	<!--------------------------------Modal------------------------------->
+	<div id="myModal" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close">&times;</span>
+				<h3>Invoice</h3>
+			</div>
+			<div class="modal-body">
+				<form id="one" action="#">
+					<div>
+
+						<!------(divc)--------Item description HSN QTY Amount GST% Section-------------->
+						<div class="divc">
+							<div class="divc1">
+								<label class="lable" for="Item description">Item description</label>
+								<select id="itemname" name="item">
+									<!-- Select--From Local Storage -->
+								</select>
+							</div>
+							<div class="divc2">
+								<label class="lable">HSN Code</label>
+								<input class="input" type="number" autocomplete="off" id="hsn" name="hsn">
+							</div>
+							<div class="divc3">
+								<label class="lable">QTY</label>
+								<input class="input" type="number" autocomplete="off" id="qty">
+							</div>
+							<div class="divc4">
+								<label class="lable">Amount</label>
+								<input class="input" type="number" autocomplete="off" id="amount">
+							</div>
+							<div class="divc5">
+								<label class="lable">GST</label>
+								<select id="gst" name="gst">
+									<option value="0.18">18%</option>
+									<option value="0.05">5%</option>
+									<option value="0.12">12%</option>
+									<option value="0.28">28%</option>
+								</select>
+							</div>
+						</div>
+
+						<!-------(dive)--------Button Section--------------------->
+						<div class="dive">
+							<div class="dive1">
+								<input type="button" id="btn1" value="+ GST">
+								<input type="button" id="btn2" value="- GST">
+							</div>
+							<div class="dive2">
+								<input type="button" id="add" onclick="addHtmlTableRow();" value="Add">
+								<input type="button" onclick="editHtmlTbleSelectedRow();" value="Edit">
+								<input type="button" onclick="removeSelectedRow();" value="Remove">
+								<input type="reset" value="Reset">
+							</div>
+						</div>
+
+						<!------(divd)--------Qty Tax Amount GST Amount Grand Total Section-------------->
+						<div class="divd">
+							<div class="divd1">
+								<input class="input" type="number" id="Qty" name="qty" placeholder="Qty.">
+							</div>
+							<div class="divd5">
+								<input class="input" type="number" id="Gst" name="Gst" placeholder="Gst Percent">
+							</div>
+							<div class="divd2">
+								<input class="input" type="number" id="TaxableAmount" name="tax" placeholder="Taxable Amount">
+							</div>
+							<div class="divd3">
+								<input class="input" type="number" id="GSTAmount" name="gstam" placeholder="Gst Amount">
+							</div>
+							<div class="divd4">
+								<input class="input" type="number" id="GrandTotal" name="total" placeholder="Total">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!---------------------------------	TAX INVOICE	------------------------------->
+	<page size="A4" id="main">
+		<header>
+			<!----Tax Invoice Heading----->
+			<h1>Tax Invoice</h1>
+			<!---LOGO---->
+			<span><img alt="" src="/png/DM LOGO.png"></span>
+		</header>
+		<!----Invoice--details --->
+		<div id="div0">
+			<table id="table1">
+				<tr>
+					<th><span>Invoice No.</span></th>
+					<td id="inno"><span>DM-</span><span contenteditable id="in">001</span></td>
+				</tr>
+				<tr>
+					<th><span>Invoice Date</span></th>
+					<td><span><input type="date" id="indt"></span></td>
+				</tr>
+				<tr>
+					<th><span>Dispatched through</span></th>
+					<td>
+						<span id="intrans">
+							<select class="select" name="tran">
+								<option value="TCI Express">TCI Express</option>
+								<option value="Personal Transport">Personal Transport</option>
+								<option value="VRL Logistics">VRL Logistics</option>
+								<option value="RailWay">RailWay</option>
+							</select>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<th><span> No. of Packages</span></th>
+					<td><span contenteditable id="inpac">001</span><span>Ctn</span></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="div">
+			<!----company-details --->
+			<div class="D1">
+				<div><h3>DHANI MACHINE'S</h3></div>
+				<div class="subdiv">
+					<div class="subdiv1">Address</div>
+					<div class="subdiv2">Rameshwari Ring Road,<br>Jogi Nagar,Nagpur- 440027</div>
+				</div>
+				<div class="subdiv">
+					<div class="subdiv1">Ph.no.</div>
+					<div class="subdiv2">9423327372</div>
+				</div>
+				<div class="subdiv">
+					<div class="subdiv1">Gst No.</div>
+					<div class="subdiv2">27CQUPM4626C1ZK</div>
+				</div>
+				<div class="subdiv">
+					<div class="subdiv1">E-mail</div>
+					<div class="subdiv2"> info@dhanimachines.com</div>
+				</div>
+			</div>
+			<!----customer-details --->
+			<div class="D2">
+				<div class="cusname"><span>Bill For</span><h3 contenteditable id="inna">RAJAT TAGADE</h3></div>
+				<div class="add">
+					<div class="add1">Address</div>
+					<div class="add2">
+						<address contenteditable>
+							<p>101 E. Chapman Ave<br>Orange, CA 92866</p>
+						</address>
+					</div>
+				</div>
+				<div class="ph">
+					<div class="ph1">Ph.no.</div>
+					<div class="ph2"><span contenteditable>8552321321</span></div>
+				</div>
+				<div class="gstno">
+					<div class="gstno1">Pan/Gst No.</div>
+					<div class="gstno2"><span contenteditable>AA34665RT0</span></div>
+				</div>
+				<div class="statena">
+					<div class="statena1">State Name</div>
+					<div class="statena2">
+						<select class="select" name="state" id="stateName">
+							<option value="Andhra Pradesh">Andhra Pradesh</option>
+							<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+							<option value="Assam">Assam</option>
+							<option value="Bihar">Bihar</option>
+							<option value="Chhattisgarh">Chhattisgarh</option>
+							<option value="Delhi">Delhi</option>
+							<option value="Goa">Goa</option>
+							<option value="Gujarat">Gujarat</option>
+							<option value="Haryana">Haryana</option>
+							<option value="Himachal Pradesh">Himachal Pradesh</option>
+							<option value="Jharkhand">Jharkhand</option>
+							<option value="Karnataka">Karnataka</option>
+							<option value="Kerala">Kerala</option>
+							<option value="Madhya Pradesh"> Madhya Pradesh</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Manipur">Manipur</option>
+							<option value="Meghalaya">Meghalaya</option>
+							<option value="Mizoram">Mizoram</option>
+							<option value="Nagaland">Nagaland</option>
+							<option value="Odisha">Odisha</option>
+							<option value="Punjab">Punjab</option>
+							<option value="Rajastdan">Rajastdan</option>
+							<option value="Sikkim">Sikkim</option>
+							<option value="Tamil Nadu">Tamil Nadu</option>
+							<option value="Telangana">Telangana</option>
+							<option value="Tripura">Tripura</option>
+							<option value="Uttar Pradesh">Uttar Pradesh</option>
+							<option value="Uttarakhand">Uttarakhand</option>
+							<option value="West Bengal">West Bengal</option>
+						</select>
+						<span><button id="myBtn">+</button></span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!----Item Description --->
+		<div id="tablediv">
+			<table id="table" class="inventory">
+				<thead>
+					<tr>
+						<th><span>Item Description</span></th>
+						<th><span>HSN</span></th>
+						<th><span>Qty.</span></th>
+						<th><span>GST%</span></th>
+						<th><span>Tax Amount</span></th>
+						<th><span>Gst Amount</span></th>
+						<th><span>Amount</span></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><span></span></td>
+						<td><span></span></td>
+						<td><span></span></td>
+						<td><span></span></td>
+						<td><span></span></td>
+						<td><span></span></td>
+						<td><span></span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!----balance Section --->
+		<div class="termtax">
+			<div class="taxdiv">
+				<div class="taxbl" style="border-top: .5px solid rgb(143, 140, 140);">
+					<div class="taxbl1">Taxable Amount</div>
+					<div class="taxbl2" id="bltax">000.00</div>
+				</div>
+				<div class="taxbl">
+					<div class="taxbl1">GST Amount</div>
+					<div class="taxbl2" id="blgst">000.00</div>
+				</div>
+				<div class="taxbl">
+					<div class="taxbl1">CGST</div>
+					<div class="taxbl2" id="blcgst">--</div>
+				</div>
+				<div class="taxbl">
+					<div class="taxbl1">SGST</div>
+					<div class="taxbl2" id="blsgst">--</div>
+				</div>
+				<div class="taxbl">
+					<div class="taxbl1">IGST</div>
+					<div class="taxbl2" id="bligst">--</div>
+				</div>
+				<div class="total">
+					<div class="total1">Total</div>
+					<div class="total2" id="bltotal">0000.00</div>
+				</div>
+				<div class="inword">
+					<div class="inword1">Invoice Total (In Words)</div>
+					<div class="inword2"><span id="word"></span><span>Rupees Only</span></div>
+				</div>
+			</div>
+			<!----Terms & Conditions--->
+			<div class="termdiv">
+				<span>Terms & Conditions</span>
+				<div>Goods once sold not be taken back.</div>
+				<div>Claim if any shall be lodged within 7 days of receipt.</div>
+				<div>Please Give A/c payee cheque only.</div>
+				<div>We declare that this invoice show the actual<br>price of goods described & correct.</div>
+				<br>
+				<div>Website:dhanimachine.com</div>
+			</div>
+		</div>
+	</page>
+
+</body>
+
+</html>
+
+
+<script src="invoice.js"></script>
+<script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+

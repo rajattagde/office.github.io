@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Inventory</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Inventory/Inventory.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src='Inventory.js'></script>
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="card mt-3">
+            <div class="header">
+                <div><h1>Inventory</h1></div>
+			    <div class="nav">
+                    <ul>
+                        <li><a href="/index.html">DashBord</a></li>
+                        <li><a href="/createinvoice/invoice.html">Create Invoice</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body">
+                <form action="#" id='itemform'>
+                    <div class="group1">
+                        <label for="isbn">Sr.No</label>
+                        <input type="number" id="srno">
+                    </div>
+                    <br>
+                    <div class="group2">
+                        <label for="authorName">Item Name</label>
+                        <input type="text" id="itemName" class='form-control'>
+                    </div><br>
+                    <div class="group3">
+                        <label for="bookName">HSN Code</label>
+                        <input type="number" id="hsncode" class='form-control'>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="group4">
+                        <input type="submit" value='Add Item' id="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="table-div">
+            <table class='table' >
+                <thead>
+                    <tr>
+                        <th style="padding: 4px;">Sr.No</th>
+                        <th style="padding: 4px;">Machine`s Name</th>
+                        <th style="padding: 4px;">HSN Code</th>
+                        <th style="padding: 4px;">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id='dynamicHere' >
+                <!--<tr>
+                        <td>1</td>
+                        <td>Vishal </td>
+                        <td>Ui Development</td>
+                        <td><button class='btn btn-danger'>X</button></td>
+                    </tr> -->
+                </tbody>
+            </table>
+
+            <div hidden>
+                <option value="Softy Machine Model DM-SP">Softy Machine Model DM-SP</option>
+				<option value="Softy Machine Model DM-DONPER">Softy Machine Model DM-DONPER</option>
+				<option value="Softy Machine Model DM-Mk">Softy Machine Model DM-Mk</option>
+				<option value="Softy Machine Model DM-IND">Softy Machine Model DM-IND</option>
+				<option value="Soda Machine DM-001 ZIKOOL">Soda Machine DM-001 ZIKOOL</option>
+				<option value="Pop-Corn Machine DM-Stenless still">Pop-Corn Machine DM-Stenless still</option>
+				<option value="Pop-Corn Machine DM-Alum.">Pop-Corn Machine DM-Alum.</option>
+				<option value="Tawa Roll Machine DM-909">Tawa Roll Machine DM-909</option>
+				<option value="Sugar Candy Machine DM-Alum.01">Sugar Candy Machine DM-Alum.01</option>
+				<option value="Sugar Candy Machine DM-still.02">Sugar Candy Machine DM-still.02</option>
+				<option value="Chicken Grill Machine">Chicken Grill Machine</option>
+				<option value="Shawarma Machine">Shawarma Machine</option>
+				<option value="Deep Fryer">Deep Fryer</option>
+				<option value="Chocolate Fountain">Chocolate Fountain</option>
+				<option value="Planetary Cake Mixer">Planetary Cake Mixer</option>
+				<option value="Milk Shake Machine">Milk Shake Machine</option>
+				<option value="Sandwich Grill Machine">Sandwich Grill Machine</option>
+				<option value="Fruit Juice Dispenser">Fruit Juice Dispenser</option>
+				<option value="Blander (Boss)">Blander (Boss)</option>
+				<option value="Deck Oven 1D 1T">Deck Oven 1D 1T</option>
+				<option value="Deck Oven 1D 2T">Deck Oven 1D 2T</option>
+				<option value="Deck Oven 2D 4T">Deck Oven 2D 4T</option>
+				<option value="Deck Oven 2D 6T">Deck Oven 2D 6T</option>
+				<option value="Deck Oven 3D 9T">Deck Oven 3D 9T</option>
+				<option value="Waffle Cone Maker">Waffle Cone Maker</option>
+				<option value="Softy Primix Super+ Chocolate">Softy Primix Super+ Chocolate</option>
+				<option value="Softy Primix Super+ Flvour">Softy Primix Super+ Flvour</option>
+				<option value="Softy Primix Vintop Chocolate">Softy Primix Vintop Chocolate</option>
+				<option value="Softy Primix Vintop Flvour">Softy Primix Vintop Flvour</option>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+<!-- <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>Local Storage</title>
+      <script type="text/javascript" src="local.js"></script>
+    </head>
+    <body>
+       <div id="formDiv">
+        <h1>Add Item`s</h1>
+        <form id="additemForm">
+            <label for="key" >Sr.no</label>
+            <input type="text" id="key" placeholder="Sr.no" required><br>
+            <label for="Item Name" >Item Name</label>
+            <input type="text" id="itemname" placeholder="Item Name" required><br>
+            <label for="HSNCode" >HSN Code</label>
+            <input type="text" id="hsncode" placeholder="HSNCode" required><br>
+            <button type="submit">Add Item</button>
+        </form>
+            <br>
+            <label for="retrieveKey" >Enter Key to retrieve item</label>
+            <input type="text" id="retrieveKey" placeholder="retrieveKey" required><br>
+            <button id="retrieveButton">Retrieve records</button>
+            <br>
+            <div id="retrieve"></div>
+            <br>
+            <label for="removeKey" >Enter Key to delete item</label>
+            <input type="text" id="removeKey" placeholder="removeKey" required><br>
+            <button id="removeButton">Remove record</button>
+            <br>
+            <button id="clearButton">Clear all records</button>
+            <br>
+            <br>
+
+        <div class="container">
+                <div class="tab tab-1">
+                    <table id="table" border="1">
+                        <tr>
+                            <th>Item Description</th>
+                            <th>HSN code</th>
+                        </tr>
+                        <tr>
+                            <td>softy machine</td>
+                            <td>4281</td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                <br>
+                <div class="tab tab-2">
+                    First Name :<input type="text" name="fname" id="fname">
+                    Last Name :<input type="text" name="lname" id="lname">
+                     Age :<input type="number" name="age" id="age"> 
+                    
+                    <button onclick="addHtmlTableRow();">Add</button>
+                    <button onclick="editHtmlTbleSelectedRow();">Edit</button>
+                    <button onclick="removeSelectedRow();">Remove</button>
+                </div>
+        </div>      
+            
+      </div> 
+    </body>
+    <script src="additem.js"></script>
+    </html> -->
