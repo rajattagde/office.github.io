@@ -71,7 +71,7 @@ window.onload = function() {
                     <td style="padding: 4px;">${onebyone.itemname} </td>
                     <td style="padding: 4px; text-align: center;">${onebyone.hsncode}</td>
                     <td style="padding: 4px; text-align: center; cursor: pointer;">
-                        <img src="../png/delete.png" class='RemoveIt' style="cursor: pointer;">
+                        <img src="/png/delete.png" class='RemoveIt' style="cursor: pointer;">
                     </td>
                 </tr>`
             })
