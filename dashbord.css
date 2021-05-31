@@ -16,7 +16,6 @@ body{ height: auto; background-color: rgb(241, 241, 241)}
 
 /*---------------- Header --------------*/
 
-
 header div { 
     display: flex;
     margin: 10px 0;
