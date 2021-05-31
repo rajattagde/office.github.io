@@ -24,12 +24,11 @@ header div {
     box-shadow: 1px 4px 8px rgba(126, 126, 126, 0.938);
 }
 #img {
-    flex: .8;
     padding-top: 5px;
     margin-left: 5em;
 }
 #heading {
-    flex: 1;
+    padding: 0;
 }
 
 h1{
