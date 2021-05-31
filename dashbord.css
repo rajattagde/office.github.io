@@ -16,11 +16,21 @@ body{ height: auto; background-color: rgb(241, 241, 241)}
 
 /*---------------- Header --------------*/
 
+
 header div { 
+    display: flex;
     margin: 10px 0;
-    text-align: center;
+    justify-content: center;
     background-color: #1b1515;
     box-shadow: 1px 4px 8px rgba(126, 126, 126, 0.938);
+}
+#img {
+    flex: .8;
+    padding-top: 5px;
+    margin-left: 5em;
+}
+#heading {
+    flex: 1;
 }
 
 h1{
@@ -30,7 +40,6 @@ h1{
     color: white;
     text-shadow: 6px 4px 5px #6e6d6d;
 }
-
 
 a {
     text-decoration: none; 
