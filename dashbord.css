@@ -18,18 +18,18 @@ body{ height: auto; background-color: rgb(241, 241, 241)}
 
 header div { 
     display: flex;
-    flex-direction: row;
     margin: 10px 0;
     justify-content: center;
     background-color: #1b1515;
     box-shadow: 1px 4px 8px rgba(126, 126, 126, 0.938);
 }
 #img {
+    flex: .8;
     padding-top: 5px;
     margin-left: 5em;
 }
 #heading {
-    padding: 0;
+    flex: 1;
 }
 
 h1{
