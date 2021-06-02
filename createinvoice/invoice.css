@@ -74,7 +74,7 @@ body{ background-color: rgb(19, 18, 18);}
   
   .modal-body {padding: 2px 14px;}
 
-/*---------------------Modal Form Start------------------*/
+/*-------Modal Form Start------*/
 
 form #one div{margin: 5px 0;}
 
@@ -183,33 +183,41 @@ input[type=reset]:hover {
 /*----------------sidenav------------*/
 
 .sidenav {
-	height: 100%; width: 180px; position:fixed;
-	z-index: 1; top: 0; left: 85%; 
-	background-color: rgba(175, 170, 170, 0.712);overflow-x: hidden; 
-	padding: 30px 0; text-align:center;
+	height: 100%; 
+	width: 180px; 
+	position:fixed;
+	z-index: 1; top: 0; 
+	left: 85%; 
+	background-color: rgb(153, 152, 152);
+	overflow-x: hidden; 
+	text-align: center;
+	padding-top: 1em;
 }
+
 .sidenav a {
-	text-decoration: none; padding-top: 1.5em; cursor: pointer;
-	font-size: 25px; color:  #f1f1f1c5; display: block;
+	text-decoration: none; 
+	padding-top: 2em; 
+	cursor: pointer;
+	font-size: 25px; 
+	color: #ffffff; 
+	display: block;
 }
 .sidenav a:hover { color: #1b1515;}
-
-.sidenav a img{margin-right: 7px; cursor: pointer; }
 
 /*---------------------------Invoice Temp. Start----------------*/
 
 /*------ A4 Size Page -------*/
 
-#main{
+#page{
 	box-sizing: border-box; 
 	float: left; 
 	height: 29.7cm; 
 	width: 21cm;
-	margin: 1em 0 1em 5em; 
+	margin: 1em 0 1em 8em; 
 	padding: 1cm; 
 	overflow: hidden; 
 }
-#main {
+#page {
 	background: white; 
 	box-shadow: 0 0 1in -0.25in rgba(206, 203, 203, 0.5); 
 }
@@ -225,7 +233,7 @@ input[type=reset]:hover {
 img.hover { background: #DEF; box-shadow: 0 0 1em 0.5em #DEF; }
 
 /*     header       */
-header {display: flex;}
+header { display: flex;}
 
 /*  Tax Invoice Heading   */
 header h1{
@@ -239,8 +247,8 @@ header h1{
 /*  LOGO   */
 header img { 
 	flex: 1;
-	max-height: 12em; 
-	max-width: 17em; 
+	max-height: 10em; 
+	max-width: 15em; 
 	float:right; 
 	margin: 0 .8em 0 4em;
 	overflow: hidden;
@@ -278,7 +286,7 @@ header img {
 
 .cusname {display: flex;}
 .cusname span{flex: .3; font-size: 13px;}
-.cusname h3{ flex: 1.8; text-transform: uppercase ;} 
+.cusname h3{ flex: 1.8; margin-left: 2px; text-transform: capitalize;} 
 
 .add{ display: flex;}
 .add div{ margin-top: 8px;}
@@ -362,6 +370,9 @@ table.inventory td:nth-child(7) { text-align: center; width: 15.3%; }
 .taxbl1{ flex: 1; text-align: right;}
 .taxbl2{ width: 35%; text-align: center;}
 
+.taxblgst {display: flex; margin-right: 1em;}
+.taxblgst div { font-size: .9em; font-weight: 600; margin-top: 4px;}
+
 .total{display: flex; margin-right: 1em;}
 .total div{ font-size: 1.2em; font-weight: 600; padding: 2px 0px 2px 0;}
 .total1{ flex: 1; text-align: right; }
@@ -370,11 +381,11 @@ table.inventory td:nth-child(7) { text-align: center; width: 15.3%; }
 .inword{ text-align: right; margin-right: 1em;}
 .inword1{ 
 	font-size: 12px; font-weight: 300; padding-top: 2px;
-	color: rgb(143, 140, 140); border-top: .1px solid rgb(143, 140, 140);
+	color: rgb(143, 140, 140); border-top: 1px solid rgba(175, 173, 173, 0.438);
 }
 .inword2{
 	font-size: 1em; font-weight: 600; padding: 0px 0px 3px 0; 
-	border-bottom: .1px solid rgb(143, 140, 140);
+	border-bottom: 1px solid rgba(175, 173, 173, 0.438);
 }
 /*---------- Website ------------*/
 
@@ -388,11 +399,139 @@ table.inventory td:nth-child(7) { text-align: center; width: 15.3%; }
 	font-size: 16px;
 	margin-top: 3em;
 	text-align: center;
-	color: rgb(143, 140, 140);
+	color: rgb(53, 52, 52);
+}
+
+/*-------------------------------- Gmail-Modal Start -----------------------------------*/
+
+/* The Modal (background) */
+.gmodal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 4em; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}	
+  
+  /*	 Modal Content	 */
+.gmodal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	width: 45%;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s
+}
+  
+/* Add Animation */
+@-webkit-keyframes animatetop {
+	from {top:-300px; opacity:0} 
+	to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+	from {top:-300px; opacity:0}
+	to {top:0; opacity:1}
+}
+  
+/* The Close Button */
+.gclose {
+	color: white;
+	float: right; margin: 0px 8px 0 0;
+	font-size: 28px;
+	font-weight: bold;
+}
+.gclose:hover,
+.gclose:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.gmodal-header {
+	font-size: 22px;
+	padding: 3px 16px;
+	background-color: #3d3d3d;
+	color: white;
+}
+
+.gmodal-body {
+	padding: 1em 1em;
+}
+
+.gmodal-body form div { display: flex;}
+
+.labeldiv{ 
+	display: flex; 
+	flex-direction: column;
+}
+
+.inputdiv{ 
+	display: flex; 
+	flex-direction: column; 
+	width: 80%; 
+	margin-bottom: 5px;
+}
+
+.submitdiv { 
+	justify-content: center;
+	margin-top: 2px;
+}
+
+.glabel{ 
+	font-size: large;
+	color: #000;
+	padding: 4px;
+	margin-bottom: 5px;
+
+}
+
+.ginput{
+	border-top-style: hidden;
+  	border-right-style: hidden;
+  	border-left-style: hidden;
+  	border-bottom-style: solid;
+  	border-color: rgba(172, 172, 172, 0.411);
+  	border-width: thin;
+  	background-color: none;
+  	font-family: Times, serif; 
+  	font-size: 16px;
+	padding: 4px;
+  	margin-left: 10px;
+	margin-bottom: 5px;
+	cursor: text;
+	text-overflow:ellipsis;
+	overflow-wrap: break-word;
+}
+
+.gsubmit{
+	width: 6em;
+	padding: 4px 0;
+	font-size: medium;
+	font-weight: bold;
+	color: white;
+	background-color: rgb(0, 89, 255);
+	border: 1px solid rgb(0, 89, 255);
+	border-radius: 6px;
+	cursor: pointer;
 }
 
 
-/*----------------- Print Section --------------*/
+
+
+/*----------------------------------------- Print Section ----------------------------------*/
 
 @page { margin: 0; }
 
@@ -401,7 +540,7 @@ table.inventory td:nth-child(7) { text-align: center; width: 15.3%; }
 	html { background: none; padding: 0; }
 	
 
-	#main { box-shadow: none; margin: 0; }
+	#page { box-shadow: none; margin: 0; }
 	span:empty { display: none; }
 	.sidenav{display: none;}
 	input[type="date"]::-webkit-calendar-picker-indicator{display: none;} 

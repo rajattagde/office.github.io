@@ -7,7 +7,7 @@
 	cursor: default;
 }	
 
-body{ height: auto; background-color: rgb(153, 149, 149);}
+body{ height: auto; background-color: rgb(153, 152, 152);}
 
 /*--------------------------- Header Navigation----------------------------*/
 
@@ -22,7 +22,7 @@ body{ height: auto; background-color: rgb(153, 149, 149);}
     margin-left: 3em;
     color: aliceblue; padding: 7px 16px 7px 26px;
     font-family: "Allerta Stencil", Sans-serif;
-    text-shadow: 4px 3px 1px rgba(245, 245, 245, 0.308);
+    text-shadow: 4px 3px 1px rgb(0, 0, 0);
 }
 
 .nav{ 
@@ -40,7 +40,8 @@ li a {
     text-decoration: none;
 }
 li a:hover {
-    background-color: #111;
+    color: #111;
+    background-color: #ffffff;
 }
 
 /*--------------------------- Card-Body ---------------------------------*/
@@ -80,11 +81,12 @@ input[type=submit]{
     padding: 6px 10px; display: inline-block; 
     border-radius: 4px; cursor: pointer;
     box-sizing:content-box; border: none;
-    background-color: #ddd; color: #0f0f0fd2;
+    background-color: #ffffff; color: #111;
 }
 input[type=submit]:hover {
+    font: bolder;
 	background-color: #111;
-  	color: #ddd;
+  	color: #ffffff;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

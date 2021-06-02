@@ -11,18 +11,18 @@
 </head>
 
 <body>
-	<!-----------------------------SIDE NAV------------------------------->
+	<!-------------------SIDE NAV-------------------->
 	<div class="sidenav">
-		<a href="../index.html">Dashbord</a>
-		<a onclick="printInvoice();"><img src="../png/printer.png">Print Invoice</a>
-		<a onclick="generatePdf();"><img src="../png/pdf-file.png">Save PDF</a>
-		<a href="../Inventory/Inventory.html"><img src="../png/Inventory.png">Inventory</a>
-		<a href="../index.html">Dashbord</a>
-		<a href="../index.html">Dashbord</a>
-		<a href="../index.html">Dashbord</a>
+		<a href="../index.html">DashBord</a>
+		<a onclick="printInvoice();">Print Invoice</a>
+		<a onclick="generatePdf();">Save PDF</a>
+		<a href="../Inventory/Inventory.html">Inventory</a>
+		<a id="gmailBtn">Email Invoice</a>
+		<a onclick="window.location.reload()">Reset</a>
+		
 	</div>
 
-	<!--------------------------------Modal------------------------------->
+	<!---------------------	Modal	------------------>
 	<div id="myModal" class="modal">
 		<!-- Modal content -->
 		<div class="modal-content">
@@ -103,13 +103,13 @@
 		</div>
 	</div>
 
-	<!---------------------------------	TAX INVOICE	------------------------------->
-	<page size="A4" id="main">
+	<!------------------------	TAX INVOICE	---------------------->
+	<page size="A4" id="page">
 		<header>
 			<!----Tax Invoice Heading----->
 			<h1>Tax Invoice</h1>
 			<!---LOGO---->
-			<span><img alt="" src="../png/DM LOGO.png"></span>
+			<img alt="" src="/png/DM LOGO.png">
 		</header>
 		<!----Invoice--details --->
 		<div id="div0">
@@ -163,9 +163,12 @@
 					<div class="subdiv2"> info@dhanimachines.com</div>
 				</div>
 			</div>
+
 			<!----customer-details --->
 			<div class="D2">
-				<div class="cusname"><span>Bill For</span><h3 contenteditable id="inna">RAJAT TAGADE</h3></div>
+				<div class="cusname"><span>Bill For</span>
+					<h3 contenteditable id="inna">xxx yy zzz</h3>
+				</div>
 				<div class="add">
 					<div class="add1">Address</div>
 					<div class="add2">
@@ -176,7 +179,7 @@
 				</div>
 				<div class="ph">
 					<div class="ph1">Ph.no.</div>
-					<div class="ph2"><span contenteditable>8552321321</span></div>
+					<div class="ph2"><span contenteditable>8500320021</span></div>
 				</div>
 				<div class="gstno">
 					<div class="gstno1">Pan/Gst No.</div>
@@ -186,6 +189,7 @@
 					<div class="statena1">State Name</div>
 					<div class="statena2">
 						<select class="select" name="state" id="stateName">
+							<option value="Select State" style="background-color: rgb(136, 233, 136);">Select State</option>
 							<option value="Andhra Pradesh">Andhra Pradesh</option>
 							<option value="Arunachal Pradesh">Arunachal Pradesh</option>
 							<option value="Assam">Assam</option>
@@ -222,6 +226,7 @@
 
 			</div>
 		</div>
+
 		<!----Item Description --->
 		<div id="tablediv">
 			<table id="table" class="inventory">
@@ -253,7 +258,7 @@
 		<!----balance Section --->
 		<div class="termtax">
 			<div class="taxdiv">
-				<div class="taxbl" style="border-top: .5px solid rgb(143, 140, 140);">
+				<div class="taxbl" style="border-top: 1px solid rgba(175, 173, 173, 0.438);">
 					<div class="taxbl1">Taxable Amount</div>
 					<div class="taxbl2" id="bltax">000.00</div>
 				</div>
@@ -261,20 +266,20 @@
 					<div class="taxbl1">GST Amount</div>
 					<div class="taxbl2" id="blgst">000.00</div>
 				</div>
-				<div class="taxbl">
+				<div class="taxblgst">
 					<div class="taxbl1">CGST</div>
 					<div class="taxbl2" id="blcgst">--</div>
 				</div>
-				<div class="taxbl">
+				<div class="taxblgst">
 					<div class="taxbl1">SGST</div>
 					<div class="taxbl2" id="blsgst">--</div>
 				</div>
-				<div class="taxbl">
+				<div class="taxblgst">
 					<div class="taxbl1">IGST</div>
 					<div class="taxbl2" id="bligst">--</div>
 				</div>
 				<div class="total">
-					<div class="total1">Total</div>
+					<div class="total1">Grand Total</div>
 					<div class="total2" id="bltotal">0000.00</div>
 				</div>
 				<div class="inword">
@@ -295,11 +300,39 @@
 		<div id="website">Website:dhanimachine.com</div>
 	</page>
 
+	<!------------------------------- Gmail-Modal ------------------------------->
+	<div id="gmailModal" class="gmodal">
+		<!-- Modal content -->
+		<div class="gmodal-content">
+			<div class="gmodal-header">
+				<span class="gclose">&times;</span>
+				<span>Send Mail</span>
+			</div>
+			<div class="gmodal-body">
+				<form>
+					<div>
+						<div class="labeldiv">
+							<label for="mailto" class="glabel">To</label>
+							<label for="subject" class="glabel">Subject</label>
+						</div>
+						<div class="inputdiv">
+							<input type="email" class="ginput" id="to">
+							<input type="text" class="ginput" id="subject" >
+						</div>
+					</div>
+					<div class="submitdiv">
+						<button type="submit" class="gsubmit" onclick="sendEmail();">Send</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
 </body>
 
 </html>
 
-
 <script src="invoice.js"></script>
-<script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+<!-- For Pdf Create -->
+<script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script> 
 

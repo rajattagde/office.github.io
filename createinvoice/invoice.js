@@ -19,11 +19,13 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
-
-// When the user clicks anywhere outside of the modal, close it
+// When the user clicks anywhere outside of the modal, close it  It`s  also gmail Modal
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+  }
+  if(event.target == gmodal) {
+    gmodal.style.display = "none";
   }
 }
 
@@ -94,7 +96,7 @@ add.addEventListener("click", function(){
 		return a + b;
 	},);
 
-	let bltax = document.getElementById('bltax').innerHTML = toTax.toFixed(2);
+	let bltax = document.getElementById('bltax').innerHTML = toTax.toFixed(1);
 
 	// Total GST Amount
 	let GST_Amount = document.getElementById('GSTAmount').value
@@ -105,7 +107,7 @@ add.addEventListener("click", function(){
 		return a + b;
 	},);
 
-	let blgst = document.getElementById('blgst').innerHTML = toGst.toFixed(2);
+	let blgst = document.getElementById('blgst').innerHTML = toGst.toFixed(1);
 
 	// Total CGST SGST IGST
 	let stateName = document.getElementById('stateName').value;
@@ -113,8 +115,8 @@ add.addEventListener("click", function(){
 	var halfgst = Math.round(blgst/2)
 
 	if(stateName == 'Maharashtra'){
-		let blcgst = document.getElementById('blcgst').innerHTML = halfgst.toFixed(2);
-		let blsgst = document.getElementById('blsgst').innerHTML = halfgst.toFixed(2);
+		let blcgst = document.getElementById('blcgst').innerHTML = halfgst.toFixed(1);
+		let blsgst = document.getElementById('blsgst').innerHTML = halfgst.toFixed(1);
 	}
 	else{
 		let bligst = document.getElementById('bligst').innerHTML = blgst;
@@ -127,7 +129,7 @@ add.addEventListener("click", function(){
 
 	gToatl = Math.round(x)+Math.round(y);
 
-	let bltotal = document.getElementById('bltotal').innerHTML = gToatl.toFixed(2);
+	let bltotal = document.getElementById('bltotal').innerHTML = gToatl.toFixed(1);
 
 	word.innerHTML=convertNumberToWords(bltotal);
 
@@ -216,8 +218,6 @@ function convertNumberToWords(amount) {
 	}
 	return words_string;
 }
-
-
 
 
 //--------------------------------------Table  Start----------------------------------------------------
@@ -415,6 +415,41 @@ window.onload = function() {
     }
 
     UI.populateSELECT(Store.getStored())
+
+}
+//------------------------------- Gmail-Modal Start ------------------------------
+
+var gmodal = document.getElementById("gmailModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("gmailBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("gclose")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+	gmodal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+	gmodal.style.display = "none";
+}
+
+// // ------------- Mail Section
+
+function sendEmail() {
+
+	let To = document.getElementById('to').value
+	let	Subject= document.getElementById('subject').value
+
+	if(To==="",Subject===""){
+		window.alert('Fill Email ID and Subject');
+	}
+	else{
+		window.open(href="mailto:"+To+"?subject="+Subject+"");
+	}
 
 }
 

@@ -9,10 +9,10 @@
 
 body{ height: auto; background-color: rgb(241, 241, 241)}
 
-#rt{
+/* #DevelopBy{
     margin-left: 1em;
     color: rgb(153, 149, 149);
-}
+} */
 
 /*---------------- Header --------------*/
 
@@ -23,11 +23,43 @@ header div {
     background-color: #1b1515;
     box-shadow: 1px 4px 8px rgba(126, 126, 126, 0.938);
 }
-#img {
+
+.logospan {
     flex: .8;
     padding-top: 5px;
-    margin-left: 5em;
+    margin-left: 4em;
 }
+
+img{ cursor: pointer;}
+
+/*------ Tooltip ------*/
+.imgtool { /* Container for our tooltip */
+    position: relative; 
+    display: inline-block;
+    margin-left: 1em;
+    overflow: visible;
+}
+   
+.imgtool .tooltip { /* This is for the tooltip text */
+    visibility: hidden;
+    width: 150px;
+    /* font-family: ; */
+    background-color: transparent;
+    /* background-color: #8412d5; */
+    box-shadow: 4px 2px 8px rgba(250, 248, 248, 0.808);
+    color: white;
+    text-align: center;
+    margin: 12px 0 0 12px;
+    padding: 3px;
+    border-radius: 4px; 
+    position: absolute;
+    z-index: 1;
+}
+   
+.imgtool:hover .tooltip { /* Makes tooltip text visible when text is hovered on */
+    visibility: visible;
+}
+
 #heading {
     flex: 1;
 }
@@ -39,6 +71,8 @@ h1{
     color: white;
     text-shadow: 6px 4px 5px #6e6d6d;
 }
+
+/*--------------- Body Start ------------*/
 
 a {
     text-decoration: none; 
@@ -69,12 +103,15 @@ main {
     text-align: center; 
     background-color: black;
     border: 1px solid black;
-    border-radius: 2em;
-    box-shadow: 3px 7px 8px rgba(126, 126, 126, 0.938);
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .row-sepretion:hover{
-    box-shadow: none;
+    width: 16em;
+    border-radius: 0;
+    box-shadow: 3px 7px 8px rgba(126, 126, 126, 0.938);
+    
 }
 
 
